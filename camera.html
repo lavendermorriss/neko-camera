@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>猫たん採寸カメラ</title>
+  <link rel="stylesheet" href="camera.css">
+</head>
+<body>
+  <main class="app">
+
+    <header class="topbar">
+      <h1 class="title">猫たん採寸カメラ</h1>
+      <p id="stepText" class="step"></p>
+    </header>
+
+    <section id="stage" class="stage" aria-label="カメラとガイド">
+      <video id="video" class="video" playsinline muted autoplay></video>
+      <img id="guide" class="guide" alt="">
+
+      <div id="startPanel" class="start-panel">
+        <p class="start-text">猫たんをガイドに合わせて撮ります。</p>
+        <button id="startBtn" class="btn-start" type="button">カメラをはじめる</button>
+      </div>
+
+      <p id="message" class="message" role="alert" hidden></p>
+    </section>
+
+    <footer class="controls">
+      <div class="tabs" role="tablist" aria-label="撮影する向き">
+        <button class="tab" type="button" role="tab" data-guide="front">正面</button>
+        <button class="tab" type="button" role="tab" data-guide="side">横</button>
+        <button class="tab" type="button" role="tab" data-guide="top">真上</button>
+      </div>
+
+      <label class="opacity-row" for="opacity">
+        <span class="opacity-label">ガイドのこさ</span>
+        <input id="opacity" class="opacity-range" type="range" min="10" max="100" value="60">
+      </label>
+    </footer>
+
+  </main>
+
+  <script src="camera.js"></script>
+</body>
+</html>
